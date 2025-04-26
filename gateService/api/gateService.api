@@ -1,0 +1,35 @@
+syntax = "v1"
+
+info (
+	title:   "type title here"
+	desc:    "type desc here"
+	author:  "type author here"
+	email:   "type email here"
+	version: "type version here"
+)
+
+type RegisterReq {
+	Account       string `json:"account,omitempty"`
+	Password      string `json:"password,omitempty"`
+	LoginPlatform int32  `json:"loginPlatform,omitempty"`
+//SmsCode       string `json:"smsCode,omitempty"`
+}
+
+type ServerInfo {
+	Host string `json:"host"`
+	Port int32  `json:"port"`
+}
+
+type RegisterResp {
+	ServerInfo ServerInfo `json:"serverInfo"`
+	Token      string     `json:"token"`
+}
+
+service GateApi {
+	@handler ping
+	get /ping
+
+	@handler register
+	post /register (RegisterReq) returns (RegisterResp)
+}
+

@@ -1,0 +1,35 @@
+Name: GateApi
+Host: 0.0.0.0
+Port: 13000
+
+
+Etcd:
+  Hosts:
+    - 127.0.0.1:2379
+  Key: gate.api
+
+
+UserRpc:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: user.rpc
+  Timeout: 6000
+
+Jwt:
+  secret: 123456
+  exp: 7
+
+#日志配置
+LogConf:
+  ServiceName: gateApi-log
+  Path: ../logs/gate
+  Mode: console #file
+  Encoding: json
+  Level: info
+  Compress: true
+  KeepDays: 7
+  StackCooldownMillis: 10000
+  Rotation: daily
+  FileTimeFormat: 2006-01-02
+  TimeFormat: 2006-01-02 15:04:05

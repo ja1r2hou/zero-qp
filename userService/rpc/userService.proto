@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package user;
+option go_package="./user";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+
+message RegisterParams{
+  string account = 1;
+  string password = 2;
+  int32 loginPlatform = 3;
+  string smsCode = 4;
+}
+
+message RegisterResponse{
+  string uid = 1;
+}
+
+message CidBindUidReq{
+  string uid = 1;
+  string cid =2;
+}
+
+message CidBindUidResp{
+bool  isSuccess =1;
+}
+
+
+service UserRPC {
+  rpc Ping(Request) returns(Response);
+  rpc Register(RegisterParams) returns(RegisterResponse);
+
+  //CidBindUid websocket cid绑定uid
+  rpc CidBindUid(CidBindUidReq) returns(CidBindUidResp);
+
+
+}

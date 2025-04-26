@@ -1,0 +1,22 @@
+Name: userservice.rpc
+ListenOn: 0.0.0.0:11500
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: user.rpc
+
+Mongo:
+  Url: mongodb://127.0.0.1:27017
+  UserName: root
+  Password: root123456
+  MinPoolSize: 10
+  MaxPoolSize: 100
+  Db: msqp
+
+
+RedisCof:
+  Host: 127.0.0.1
+  Addr: 127.0.0.1:6379
+  PoolSize: 10
+  MinIdleConns: 1
+  Password:

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package game;
+option go_package="./game";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+
+
+service GameRPC {
+  rpc Ping(Request) returns(Response);
+
+
+
+}

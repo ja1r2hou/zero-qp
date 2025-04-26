@@ -1,0 +1,16 @@
+Name: WsApi
+Host: 0.0.0.0
+Port: 8888
+
+Etcd:
+  Hosts:
+    - 127.0.0.1:2379
+  Key: gate.api
+
+
+UserRpc:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: user.rpc
+  Timeout: 6000
