@@ -16,11 +16,6 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodGet,
-				Path:    "/",
-				Handler: wsHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
 				Path:    "/ping",
 				Handler: pingHandler(serverCtx),
 			},

@@ -11,8 +11,5 @@ info (
 service WsApi {
 	@handler ping
 	get /ping
-
-	@handler ws
-	get /
 }
 
