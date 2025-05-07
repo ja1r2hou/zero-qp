@@ -4,7 +4,7 @@
 ## 项目结构介绍
 ### panguService pangu服务相关 只有rpc 里面只对接第三方的sms， 广告sdk 等
 ### userService 用户服务相关 只有rpc 也可以自己在userService 新建个api 做登录注册等
-### hallService 游戏大厅相关 比如接入其他三方游戏 。只有rpc
+### hallService 游戏大厅相关 比如接入其他三方游戏的列表，加载所有玩家的投注信息，加载中奖信息等 只有rpc 也可以自己 新建个api
 ### gameService 自己的游戏逻辑和三方游戏回调逻辑处理  api/rpc（api 只对三方游戏回调有用,如果不对接三方游戏就可以直接删掉）
 ### payService 充值服务 rpc/api（因为充值会不停的接入三四方充值，所以充值服务的api 独立起来 当然主要看你们自己）
 ### gateService 网关入口 注册或者公告类 只有api。
