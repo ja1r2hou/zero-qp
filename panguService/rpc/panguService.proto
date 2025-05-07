@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pangu;
+option go_package="./pangu";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+
+
+service PanGuRPC {
+  rpc Ping(Request) returns(Response);
+
+
+
+}
